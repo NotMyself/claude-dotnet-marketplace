@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "workflow",
-      "source": "github:NotMyself/evidence-based-workflow-plugin",
+      "source": "./workflow",
       "description": "Lean, evidence-based feature development workflow with mandatory technical validation before design. Prevents costly mistakes through risk-based spikes and lightweight documentation.",
       "version": "1.0.0",
       "author": {
