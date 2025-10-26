@@ -1,0 +1,32 @@
+{
+  "name": "notmyself-marketplace",
+  "owner": {
+    "name": "Bobby Johnson"
+  },
+  "metadata": {
+    "description": "Centralized marketplace for Bobby Johnson's Claude Code plugins",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "workflow",
+      "source": "github:NotMyself/evidence-based-workflow-plugin",
+      "description": "Lean, evidence-based feature development workflow with mandatory technical validation before design. Prevents costly mistakes through risk-based spikes and lightweight documentation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Bobby Johnson"
+      },
+      "homepage": "https://github.com/NotMyself/evidence-based-workflow-plugin",
+      "repository": "https://github.com/NotMyself/evidence-based-workflow-plugin",
+      "license": "MIT",
+      "keywords": [
+        "workflow",
+        "feature-development",
+        "spike",
+        "risk-assessment",
+        "design",
+        "evidence-based"
+      ]
+    }
+  ]
+}
