@@ -8,28 +8,30 @@
     "version": "1.0.0"
   },
   "plugins": [
-    {
-      "name": "workflow",
-      "source": {
-        "source": "github",
-        "repo": "NotMyself/evidence-based-workflow-plugin"
-      },
-      "description": "Lean, evidence-based feature development workflow with mandatory technical validation before design. Prevents costly mistakes through risk-based spikes and lightweight documentation.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Bobby Johnson"
-      },
-      "homepage": "https://github.com/NotMyself/evidence-based-workflow-plugin",
-      "repository": "https://github.com/NotMyself/evidence-based-workflow-plugin",
-      "license": "MIT",
-      "keywords": [
-        "workflow",
-        "feature-development",
-        "spike",
-        "risk-assessment",
-        "design",
-        "evidence-based"
-      ]
-    }
+   {
+  "name": "dot-hooks",
+  "source": {
+    "source": "github",
+    "repo": "NotMyself/dot-hooks"
+  },
+  "version": "1.0.0",
+  "description": ".NET 10 plugin framework for Claude Code hooks with runtime compilation, supporting global and user-defined plugins",
+  "author": {
+    "name": "Bobby Johnson",
+    "email": "bobby@notmyself.io"
+  },
+  "repository": "https://github.com/NotMyself/dot-hooks",
+  "homepage": "https://github.com/NotMyself/dot-hooks",
+  "license": "MIT",
+  "keywords": [
+    "hooks",
+    "dotnet",
+    "windows",
+    "wsl",
+    "automation",
+    "plugin-framework",
+    "roslyn"
+  ]
+}
   ]
 }
