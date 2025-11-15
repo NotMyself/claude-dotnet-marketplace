@@ -12,6 +12,36 @@ Add this marketplace to your Claude Code CLI:
 
 ## Available Plugins
 
+### dot-hooks
+
+**Strongly-typed .NET plugin framework for Claude Code hooks**
+
+A .NET 10 CLI tool that provides a robust plugin framework for intercepting and handling Claude Code lifecycle events. Features compile-time type safety, runtime plugin compilation via Roslyn, and full dependency injection support.
+
+**Key Features:**
+- 🔒 **Strongly-Typed Event Handlers** - `IHookEventHandler<TInput, TOutput>` with compile-time type constraints
+- 🎯 **Event-Specific Execution** - Handlers only execute for events they care about
+- 🔌 **Multiple Event Support** - Single plugin can handle multiple event types
+- 💉 **Full Dependency Injection** - Any registered service can be injected
+- 🚀 **Dynamic Compilation** - Roslyn-based runtime compilation of C# plugins
+- 📝 **Comprehensive Logging** - Session-based logs with per-plugin tracking
+
+**Supported Events:**
+- `pre-tool-use`, `post-tool-use` (Tool events)
+- `session-start`, `session-end` (Session events)
+- `user-prompt-submit`, `notification`, `stop`, `subagent-stop`, `pre-compact` (Generic events)
+
+**Installation:**
+```bash
+/plugin install dot-hooks
+```
+
+**Version:** 0.2.0 (Strongly-Typed Event System)
+
+**Repository:** [dot-hooks](https://github.com/NotMyself/dot-hooks)
+
+---
+
 ### workflow
 
 **Lean, evidence-based feature development workflow**
@@ -72,6 +102,32 @@ claude-marketplace/
 ```
 
 The marketplace references plugins by their GitHub repositories, allowing each plugin to be independently developed and versioned.
+
+## Automated Version Synchronization
+
+This marketplace uses automated workflows to keep plugin versions up-to-date:
+
+### How It Works
+
+1. **Scheduled Polling**: Every 6 hours, a GitHub Actions workflow checks for new releases
+2. **Version Detection**: Compares the latest release version with the current marketplace version
+3. **Automatic PR Creation**: When a new version is detected, a PR is automatically created
+4. **Review & Merge**: The PR includes release notes and can be reviewed before merging
+
+### Workflow Details
+
+- **Workflow File**: `.github/workflows/sync-plugins.yml`
+- **Schedule**: Runs every 6 hours via cron job
+- **Manual Trigger**: Can be manually triggered via GitHub Actions UI
+- **Supported Plugins**: Currently monitors `dot-hooks`
+
+### Benefits
+
+- ✅ No manual version updates needed
+- ✅ Automatic detection of new releases
+- ✅ PR-based review process before going live
+- ✅ Release notes included in PRs
+- ✅ Zero secrets required (uses public GitHub API)
 
 ## Plugin Development
 

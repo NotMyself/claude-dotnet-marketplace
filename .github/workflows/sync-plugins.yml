@@ -1,0 +1,87 @@
+name: Sync Plugin Versions
+
+on:
+  # Run every 6 hours
+  schedule:
+    - cron: '0 */6 * * *'
+
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout marketplace repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for new dot-hooks release
+        id: check_release
+        run: |
+          # Fetch latest release from dot-hooks repo
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/NotMyself/dot-hooks/releases/latest)
+          LATEST_VERSION=$(echo "$LATEST_RELEASE" | jq -r '.tag_name' | sed 's/^v//')
+
+          # Get current version from marketplace
+          CURRENT_VERSION=$(jq -r '.plugins[] | select(.name == "dot-hooks") | .version' .claude-plugin/marketplace.json)
+
+          echo "Latest version: $LATEST_VERSION"
+          echo "Current version: $CURRENT_VERSION"
+
+          if [ "$LATEST_VERSION" != "$CURRENT_VERSION" ] && [ "$LATEST_VERSION" != "null" ]; then
+            echo "update_available=true" >> $GITHUB_OUTPUT
+            echo "new_version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+            echo "release_notes<<EOF" >> $GITHUB_OUTPUT
+            echo "$LATEST_RELEASE" | jq -r '.body' >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "update_available=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update marketplace configuration
+        if: steps.check_release.outputs.update_available == 'true'
+        run: |
+          NEW_VERSION="${{ steps.check_release.outputs.new_version }}"
+
+          # Update the version in marketplace.json
+          jq --arg version "$NEW_VERSION" \
+            '(.plugins[] | select(.name == "dot-hooks") | .version) = $version' \
+            .claude-plugin/marketplace.json > .claude-plugin/marketplace.json.tmp
+
+          mv .claude-plugin/marketplace.json.tmp .claude-plugin/marketplace.json
+
+          echo "✅ Updated dot-hooks version to $NEW_VERSION"
+
+      - name: Create Pull Request
+        if: steps.check_release.outputs.update_available == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: update dot-hooks to v${{ steps.check_release.outputs.new_version }}"
+          title: "Update dot-hooks to v${{ steps.check_release.outputs.new_version }}"
+          body: |
+            ## Automated Plugin Update
+
+            New version of `dot-hooks` is available: **v${{ steps.check_release.outputs.new_version }}**
+
+            ### Release Notes
+
+            ${{ steps.check_release.outputs.release_notes }}
+
+            ### Changes
+            - Updated `.claude-plugin/marketplace.json` with new version
+
+            ---
+            *This PR was automatically created by the marketplace sync workflow.*
+
+            **Installation/Update Instructions:**
+            ```bash
+            /plugin marketplace update notmyself-marketplace
+            ```
+          branch: "auto-update/dot-hooks-${{ steps.check_release.outputs.new_version }}"
+          delete-branch: true
+          labels: |
+            automated
+            plugin-update
