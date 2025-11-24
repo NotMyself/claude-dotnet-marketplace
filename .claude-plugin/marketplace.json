@@ -32,6 +32,30 @@
         "plugin-framework",
         "roslyn"
       ]
+    },
+    {
+      "name": "implementation-plans",
+      "source": {
+        "source": "github",
+        "repo": "NotMyself/implementation-plans"
+      },
+      "version": "1.0.0",
+      "description": "Creates concise, executable implementation plans for solo developers working with AI agents",
+      "author": {
+        "name": "Bobby Johnson",
+        "email": "bobby@notmyself.io"
+      },
+      "repository": "https://github.com/NotMyself/implementation-plans",
+      "homepage": "https://github.com/NotMyself/implementation-plans",
+      "license": "MIT",
+      "keywords": [
+        "planning",
+        "implementation",
+        "ai-delegation",
+        "solo-developer",
+        "skill",
+        "validation"
+      ]
     }
   ]
 }
