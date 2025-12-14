@@ -8,30 +8,66 @@
     "version": "1.0.0"
   },
   "plugins": [
-   {
-  "name": "dot-hooks",
-  "source": {
-    "source": "github",
-    "repo": "NotMyself/dot-hooks"
-  },
-  "version": "1.0.0",
-  "description": ".NET 10 plugin framework for Claude Code hooks with runtime compilation, supporting global and user-defined plugins",
-  "author": {
-    "name": "Bobby Johnson",
-    "email": "bobby@notmyself.io"
-  },
-  "repository": "https://github.com/NotMyself/dot-hooks",
-  "homepage": "https://github.com/NotMyself/dot-hooks",
-  "license": "MIT",
-  "keywords": [
-    "hooks",
-    "dotnet",
-    "windows",
-    "wsl",
-    "automation",
-    "plugin-framework",
-    "roslyn"
-  ]
-}
+    {
+      "name": "dot-hooks",
+      "source": {
+        "source": "github",
+        "repo": "NotMyself/dot-hooks"
+      },
+      "version": "1.0.0",
+      "description": ".NET 10 plugin framework for Claude Code hooks with runtime compilation, supporting global and user-defined plugins",
+      "author": {
+        "name": "Bobby Johnson",
+        "email": "bobby@notmyself.io"
+      },
+      "repository": "https://github.com/NotMyself/dot-hooks",
+      "homepage": "https://github.com/NotMyself/dot-hooks",
+      "license": "MIT",
+      "keywords": [
+        "hooks",
+        "dotnet",
+        "windows",
+        "wsl",
+        "automation",
+        "plugin-framework",
+        "roslyn"
+      ]
+    },
+    {
+      "name": "claude-hall-monitor",
+      "source": {
+        "source": "github",
+        "repo": "NotMyself/claude-hall-monitor"
+      },
+      "version": "1.0.0",
+      "description": "Comprehensive hook monitoring with realtime viewer UI for Claude Code",
+      "author": {
+        "name": "Bobby Johnson",
+        "email": "bobby@notmyself.io"
+      },
+      "repository": "https://github.com/NotMyself/claude-hall-monitor",
+      "homepage": "https://github.com/NotMyself/claude-hall-monitor",
+      "license": "MIT",
+      "keywords": [
+        "hooks",
+        "monitoring",
+        "viewer",
+        "logging",
+        "bun",
+        "typescript",
+        "sse",
+        "realtime"
+      ],
+      "features": [
+        "12 hook handlers with JSONL logging",
+        "Realtime log viewer UI with SSE streaming",
+        "6 rules files for Claude Code conventions",
+        "3 slash commands for planning and orchestration",
+        "Cross-platform support (Windows, macOS, Linux)"
+      ],
+      "requirements": {
+        "runtime": "bun>=1.0.0"
+      }
+    }
   ]
 }
