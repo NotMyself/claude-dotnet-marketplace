@@ -40,7 +40,7 @@ A comprehensive Claude Code hooks implementation using Bun. Monitor and debug Cl
 /plugin install claude-hall-monitor
 ```
 
-**Version:** 1.0.1
+**Version:** 1.0.2
 
 **Repository:** [claude-hall-monitor](https://github.com/NotMyself/claude-hall-monitor)
 
@@ -49,3 +49,4 @@ A comprehensive Claude Code hooks implementation using Bun. Monitor and debug Cl
 ## License
 
 MIT
+
