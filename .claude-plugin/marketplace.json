@@ -14,7 +14,7 @@
         "source": "github",
         "repo": "NotMyself/claude-hall-monitor"
       },
-      "version": "1.0.1",
+      "version": "1.0.2",
       "description": "All 12 hook handlers with JSONL logging, realtime viewer UI, rules, and slash commands",
       "author": {
         "name": "Bobby Johnson",
@@ -34,3 +34,4 @@
     }
   ]
 }
+
