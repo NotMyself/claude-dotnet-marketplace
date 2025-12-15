@@ -7,38 +7,42 @@ A centralized marketplace for Bobby Johnson's Claude Code plugins.
 Add this marketplace to your Claude Code CLI:
 
 ```bash
-/plugin marketplace add NotMyself/claude-marketplace
+/plugin marketplace add NotMyself/claude-dotnet-marketplace
 ```
 
 ## Available Plugins
 
-### dot-hooks
+### claude-hall-monitor
 
-**Strongly-typed .NET plugin framework for Claude Code hooks**
+**All 12 hook handlers with JSONL logging, realtime viewer UI, rules, and slash commands**
 
-A .NET 10 CLI tool that provides a robust plugin framework for intercepting and handling Claude Code lifecycle events. Features compile-time type safety, runtime plugin compilation via Roslyn, and full dependency injection support.
+A comprehensive Claude Code hooks implementation using Bun. Monitor and debug Claude Code sessions with structured logging and a realtime web-based log viewer.
 
 **Key Features:**
-- 🔒 **Strongly-Typed Event Handlers** - `IHookEventHandler<TInput, TOutput>` with compile-time type constraints
-- 🎯 **Event-Specific Execution** - Handlers only execute for events they care about
-- 🔌 **Multiple Event Support** - Single plugin can handle multiple event types
-- 💉 **Full Dependency Injection** - Any registered service can be injected
-- 🚀 **Dynamic Compilation** - Roslyn-based runtime compilation of C# plugins
-- 📝 **Comprehensive Logging** - Session-based logs with per-plugin tracking
+- **12 Hook Handlers** - Complete coverage of all Claude Code lifecycle events
+- **JSONL Logging** - Structured, queryable log format for all events
+- **Realtime Viewer** - Web UI with SSE streaming for live log monitoring
+- **Rules Files** - 6 actionable convention files for Claude Code guidance
+- **Slash Commands** - 3 custom commands for enhanced workflow
+- **Cross-Platform** - Works on Windows, macOS, and Linux
 
-**Supported Events:**
-- `pre-tool-use`, `post-tool-use` (Tool events)
-- `session-start`, `session-end` (Session events)
-- `user-prompt-submit`, `notification`, `stop`, `subagent-stop`, `pre-compact` (Generic events)
+**Supported Hooks:**
+- `SessionStart`, `SessionEnd` - Session lifecycle with auto-start viewer
+- `PreToolUse`, `PostToolUse`, `PostToolUseFailure` - Tool execution monitoring
+- `UserPromptSubmit` - Prompt logging and context injection
+- `Notification`, `Stop` - System event handling
+- `SubagentStart`, `SubagentStop` - Subagent lifecycle tracking
+- `PreCompact` - Context compaction logging
+- `PermissionRequest` - Auto-approve/deny permissions
 
 **Installation:**
 ```bash
-/plugin install dot-hooks
+/plugin install claude-hall-monitor
 ```
 
-**Version:** 0.2.0 (Strongly-Typed Event System)
+**Version:** 1.0.1
 
-**Repository:** [dot-hooks](https://github.com/NotMyself/dot-hooks)
+**Repository:** [claude-hall-monitor](https://github.com/NotMyself/claude-hall-monitor)
 
 ---
 
