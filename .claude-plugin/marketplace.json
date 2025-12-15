@@ -56,6 +56,30 @@
         "skill",
         "validation"
       ]
+    },
+    {
+      "name": "claude-hall-monitor",
+      "source": {
+        "source": "github",
+        "repo": "NotMyself/claude-hall-monitor"
+      },
+      "version": "1.0.1",
+      "description": "All 12 hook handlers with JSONL logging, realtime viewer UI, rules, and slash commands",
+      "author": {
+        "name": "Bobby Johnson",
+        "email": "bobby@notmyself.io"
+      },
+      "repository": "https://github.com/NotMyself/claude-hall-monitor",
+      "homepage": "https://github.com/NotMyself/claude-hall-monitor",
+      "license": "MIT",
+      "keywords": [
+        "hooks",
+        "logging",
+        "viewer",
+        "monitoring",
+        "debugging",
+        "bun"
+      ]
     }
   ]
 }
