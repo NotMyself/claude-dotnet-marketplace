@@ -31,6 +31,29 @@
         "debugging",
         "bun"
       ]
+    },
+    {
+      "name": "planning-system",
+      "source": {
+        "source": "github",
+        "repo": "NotMyself/planning-system"
+      },
+      "version": "1.0.0",
+      "description": "Plan and execute complex features with verified sub-agents",
+      "author": {
+        "name": "Bobby Johnson",
+        "email": "bobby@notmyself.io"
+      },
+      "repository": "https://github.com/NotMyself/planning-system",
+      "homepage": "https://github.com/NotMyself/planning-system",
+      "license": "MIT",
+      "keywords": [
+        "planning",
+        "orchestration",
+        "sub-agents",
+        "verification",
+        "beads"
+      ]
     }
   ]
 }
