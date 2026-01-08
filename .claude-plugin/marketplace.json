@@ -38,7 +38,7 @@
         "source": "github",
         "repo": "NotMyself/planning-system"
       },
-      "version": "1.0.0",
+      "version": "0.1.0",
       "description": "Plan and execute complex features with verified sub-agents",
       "author": {
         "name": "Bobby Johnson",
@@ -57,4 +57,3 @@
     }
   ]
 }
-
