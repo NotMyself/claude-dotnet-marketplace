@@ -65,7 +65,11 @@ Break large features into smaller pieces, then let Claude execute them one by on
 - `plan:orchestrate <plan-dir>` - Execute with verification
 - `plan:parallel <dir1> <dir2>` - Run multiple plans simultaneously
 
-**Prerequisites:** [Bun](https://bun.sh), [Beads](https://github.com/bpowers/beads), Git, GitHub CLI
+**Prerequisites:** [Bun](https://bun.sh), [Beads](https://github.com/steveyegge/beads), Git, GitHub CLI
+
+**Optional:**
+- [Perles](https://github.com/zjrosen/perles) - Visual tracking UI for Beads
+- [Azure CLI](https://docs.microsoft.com/cli/azure/) with [DevOps extension](https://learn.microsoft.com/en-us/azure/devops/cli/) (`az extension add --name azure-devops`) - For Azure DevOps integration (PRs, work item sync)
 
 **Installation:**
 ```bash
