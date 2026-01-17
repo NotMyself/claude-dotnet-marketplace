@@ -42,7 +42,7 @@ Break large features into smaller pieces, then let Claude execute them one by on
 /plugin install plan
 ```
 
-**Version:** 0.3.1
+**Version:** 0.4.0
 
 **Repository:** [planning-system](https://github.com/NotMyself/planning-system)
 
