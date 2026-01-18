@@ -54,7 +54,7 @@ bd ready ──► Pull-based execution (one task at a time)
 /plugin install plan
 ```
 
-**Version:** 0.4.9
+**Version:** 0.4.10
 
 **Repository:** [planning-system](https://github.com/NotMyself/planning-system)
 
